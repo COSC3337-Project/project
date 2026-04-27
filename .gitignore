@@ -1,3 +1,9 @@
 __pycache__/
 dataset/
 venv/
+.venv/
+*.parquet
+dblp_combined.parquet
+dblp_data/dblp-ref/dblp-ref-0.json
+dblp_data/dblp-ref/dblp-ref-1.json
+dblp_data/dblp-ref/dblp-ref-2.json
