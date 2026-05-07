@@ -10,16 +10,23 @@ This repository compiles all of the work on the COSC 3337 Project, which include
 
 ### Execution order
 
-1. `DBLP_PRE_EDA.ipynb`
-2. `DBLP_Cluster_SemiLearning.ipynb`
-3. `DBLP_Classification.ipynb`
-4. `DBLP_POST_EDA.ipynb`
+1. `DBLP_PREPROCESSING.ipynb`
+2. `DBLP_PRE_EDA.ipynb`
+3. `DBLP_Cluster_SemiLearning.ipynb`
+4. `DBLP_Classification.ipynb`
+5. `DBLP_POST_EDA.ipynb`
 
 The files generated from each step are used in the next step, for the most part.
 
-## Preprocessing — `DBLP_PRE_EDA.ipynb`
+## Preprocessing — `DBLP_PREPROCESSING.ipynb`
 
 All three team members contributed to the preprocessing / pre-EDA stage. This notebook handles raw DBLP loading, cleaning, exploratory checks, and TF-IDF feature construction. It produces the artifacts (`dblp_preprocessed.parquet`, `tfidf_matrix.pkl`, `tfidf_vectorizer.pkl`) that every downstream notebook depends on.
+
+## EDA - `DBLP_PRE_EDA.ipynb`
+
+This file reads and loads the `dblp_preprocessed.parquet`, and produces a variety of different graphs to visualize the patterns in the preprocessed data.
+
+- To run, make sure the file path under "SAVEDIR" is correct
 
 ## Clustering — `DBLP_Cluster_SemiLearning.ipynb`
 
@@ -27,7 +34,7 @@ All three team members contributed to the preprocessing / pre-EDA stage. This no
 
 
 ## Clustering - `Classification_Models.ipynb` — 
-Loads precomputed TF-IDF features, sweeps Multinomial Naive Bayes / Decision Tree / Random Forest, runs all three hypothesis tests, produces every figure used in the report.
+Loads precomputed TF-IDF features, sweeps Multinomial Naive Bayes / Decision Tree / Random Forest, runs all three hypothesis tests, produces every figure used in the report.### Inputs used
 
 The four large data files used for classification to run properly was:
 - `dblp_preprocessed.parquet` — raw paper metadata
